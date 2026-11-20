@@ -11,6 +11,234 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+    min-inline-size: 320px;
+    min-block-size: 100dvb;
+    background-color: #fff;
+    background-image: var(--gradient-background);
+    background-size: 100% 960px;
+    background-repeat: no-repeat;
+    font-family: var(--primary-font);
+    font-weight: var(--font-weight-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px clamp(20px, 25.7vw, 370px);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    font-family: var(--accent-font);
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: clamp(122px, 9.2vw, 132px)
+        clamp(16px, calc(16px + (100vw - 376px) * 0.1), 122.5px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 98px;
+    width: var(--block-width);
+}
+
+.header__title {
+    text-transform: uppercase;
+    font-size: clamp(49px, calc(43.3px + 1.5vw), 65px);
+}
+
+.header__subtitle {
+    text-transform: uppercase;
+    font-size: clamp(14px, calc(10.8px + 0.9vw), 23px);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: #fff;
+    border: 2px solid #000;
+    width: var(--block-width);
+}
+
+.first__sprint-list img {
+    filter: sepia(1);
+}
+
+.first__sprint-if img {
+    filter: invert(1);
+}
+
+.second__sprint-ideal img {
+    filter: blur(4px);
+}
+
+.second__sprint-about img {
+    filter: sepia(0.5) saturate(2) contrast(1.3);
+}
+
+.third__sprint-strategies img {
+    filter: brightness(1.3);
+}
+
+.third__sprint-when img {
+    filter: contrast(1.8);
+}
+
+.now img {
+    filter: grayscale(1);
+}
+
+.card__title {
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-weight: var(--font-weight-title);
+    margin: 4px 10px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card__image-container {
+    position: relative;
+}
+
+.card__label {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-family: var(--accent-font);
+    font-weight: var(--font-weight-text);
+    font-size: 14px;
+    text-transform: uppercase;
+    mix-blend-mode: hard-light;
+    color: transparent;
+    opacity: 0.8;
+}
+
+@supports (-webkit-text-stroke: 1px #fff) {
+    .card__label {
+        -webkit-text-stroke: 0.5px var(--label-outline-color);
+    }
+}
+
+@supports not (-webkit-text-stroke: 0.5px #fff) {
+    .card__label {
+        text-shadow: -0.5px -0.5px 0 var(--label-outline-color),
+            0.5px -0.5px 0 var(--label-outline-color),
+            -0.5px 0.5px 0 var(--label-outline-color),
+            0.5px 0.5px 0 var(--label-outline-color);
+    }
+}
+
+.card__text {
+    padding: 25px;
+}
+
+.card__text > p:first-child {
+    margin-bottom: 25px;
+}
+
+.card__like-container {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    justify-content: end;
+}
+
+.card__icon-button {
+    background-color: transparent;
+    border: none;
+}
+
+.card__like-button {
+    background-color: transparent;
+    border: 2px solid #000;
+    font-family: var(--accent-font);
+    font-size: 14px;
+    font-weight: var(--font-weight-text);
+    padding: 12.5px 37px;
+}
+
+.save {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 18px 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.button__text {
+    font-family: var(--accent-font);
+    font-size: 14px;
+    font-weight: var(--font-weight-text);
+}
+
+.dialog {
+    display: none;
+}
+
+.dialog[open] {
+    width: clamp(341px, 24.5vw, 353px);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+.dialog__content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.dialog::backdrop {
+    background-color: rgb(0, 0, 0, 0.85);
+}
+
+.dialog__text {
+    font-family: var(--accent-font);
+    font-weight: var(--font-weight-text);
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.dialog__close {
+    background-color: transparent;
+    border: 2px solid #000;
+    font-family: var(--accent-font);
+    font-size: 14px;
+    font-weight: var(--font-weight-text);
+    padding: 10px 132.5px;
+}
+
+.floppy {
+    flex-shrink: 0;
+}
+
+@media (width <= 375px) {
+    .page {
+        padding: 100px 0;
+    }
+
+    .save {
+        flex-direction: column;
+    }
+
+    .floppy__start {
+        width: 28px;
+        height: 28px;
+    }
 }
