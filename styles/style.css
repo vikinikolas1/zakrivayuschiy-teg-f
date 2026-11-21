@@ -15,8 +15,8 @@
     min-block-size: 100dvb;
     background-color: #fff;
     background-image: var(--gradient-background);
-    background-size: 100% 960px;
-    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
     font-family: var(--primary-font);
     font-variation-settings: "wght" var(--font-weight-text);
     min-height: 100vh;
@@ -70,43 +70,44 @@
     width: var(--block-width);
 }
 
-.first__sprint-list img {
+.filter-sepia {
     filter: sepia(1);
 }
 
-.first__sprint-if img {
+.filter-invert {
     filter: invert(1);
 }
 
-.second__sprint-ideal img {
+.filter-blur {
     filter: blur(4px);
 }
 
-.second__sprint-about img {
+.filter-sepia-saturate-contrast {
     filter: sepia(0.5) saturate(2) contrast(1.3);
 }
 
-.third__sprint-strategies img {
+.filter-brightness {
     filter: brightness(1.3);
 }
 
-.third__sprint-when img {
+.filter-contrast {
     filter: contrast(1.8);
 }
 
-.now img {
+.filter-grayscale {
     filter: grayscale(1);
 }
 
 .card__title {
     font-family: var(--primary-font);
     font-size: 18px;
-    font-weight: var(--font-weight-title);
+    font-variation-settings: "wght" var(--font-weight-title);
     margin: 4px 10px;
 }
 
 .card img {
     width: 100%;
+    object-fit: cover;
 }
 
 .card__image-container {
@@ -122,27 +123,28 @@
     font-size: 14px;
     text-transform: uppercase;
     mix-blend-mode: hard-light;
-    color: transparent;
-    opacity: 0.8;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 @supports (-webkit-text-stroke: 1px #fff) {
     .card__label {
-        -webkit-text-stroke: 0.5px var(--label-outline-color);
+        -webkit-text-stroke: 1px var(--label-outline-color);
     }
 }
 
-@supports not (-webkit-text-stroke: 0.5px #fff) {
+@supports not (-webkit-text-stroke: 1px #fff) {
     .card__label {
-        text-shadow: -0.5px -0.5px 0 var(--label-outline-color),
-            0.5px -0.5px 0 var(--label-outline-color),
-            -0.5px 0.5px 0 var(--label-outline-color),
-            0.5px 0.5px 0 var(--label-outline-color);
+        text-shadow: -1px -1px 0 var(--label-outline-color),
+            1px -1px 0 var(--label-outline-color),
+            -1px 1px 0 var(--label-outline-color),
+            1px 1px 0 var(--label-outline-color);
     }
 }
 
 .card__text {
     padding: 25px;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 .card__text > p:first-child {
@@ -209,8 +211,6 @@
     transition: box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-    color: #fff;
-    mix-blend-mode: difference;
 }
 
 .save::before {
@@ -230,6 +230,8 @@
     font-family: var(--accent-font);
     font-size: 14px;
     font-weight: var(--font-weight-text);
+    color: #fff;
+    mix-blend-mode: difference;
 }
 
 .dialog {
