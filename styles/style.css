@@ -37,19 +37,22 @@
     font-family: var(--accent-font);
     background-color: #fff;
     border: 2px solid #000;
-    padding: clamp(122px, 9.2vw, 132px)
-        clamp(16px, calc(16px + (100vw - 376px) * 0.1), 122.5px);
+    padding: clamp(122px, 9.2vw, 132px) 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     margin-bottom: 98px;
     width: var(--block-width);
+    container-type: inline-size;
 }
 
 .header__title {
     text-transform: uppercase;
-    font-size: clamp(49px, calc(43.3px + 1.5vw), 65px);
+    max-width: 100%;
+    font-size: clamp(49px, 8.5cqw, 65px);
+    text-align: center;
+    white-space: nowrap;
 }
 
 .header__subtitle {
