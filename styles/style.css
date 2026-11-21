@@ -18,7 +18,7 @@
     background-size: 100% 960px;
     background-repeat: no-repeat;
     font-family: var(--primary-font);
-    font-weight: var(--font-weight-text);
+    font-variation-settings: "wght" var(--font-weight-text);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
