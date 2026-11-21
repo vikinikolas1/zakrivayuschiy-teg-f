@@ -13,4 +13,6 @@
         linear-gradient(to bottom, #e7e7e7 0 0.01%, #1a1a1a 100%);
     --block-width: clamp(375px, 48.61vw, 700px);
     --label-outline-color: #ffffff;
+    --outline-like-color: #000;
+    --animation-fill-color: #ff0000;
 }
