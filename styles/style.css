@@ -161,6 +161,9 @@
     background-color: transparent;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card__icon-button:focus {
@@ -206,6 +209,8 @@
     transition: box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    color: #fff;
+    mix-blend-mode: difference;
 }
 
 .save::before {
@@ -225,8 +230,6 @@
     font-family: var(--accent-font);
     font-size: 14px;
     font-weight: var(--font-weight-text);
-    color: #fff;
-    mix-blend-mode: difference;
 }
 
 .dialog {
@@ -248,7 +251,7 @@
 }
 
 .dialog::backdrop {
-    background-color: rgb(0, 0, 0, 0.85);
+    background-color: rgb(0, 0, 0, 0.75);
 }
 
 .dialog__text {
@@ -256,6 +259,7 @@
     font-weight: var(--font-weight-text);
     font-size: 14px;
     line-height: 150%;
+    text-transform: uppercase;
 }
 
 .dialog__close {
@@ -358,6 +362,10 @@
 
 .like-icon.is-liked .sparks {
     animation: sparks 0.3s ease-in 0.3s 1;
+}
+
+.ok {
+    text-transform: uppercase;
 }
 
 @media (width <= 375px) {
