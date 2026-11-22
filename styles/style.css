@@ -42,7 +42,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    margin-bottom: 98px;
+    margin-bottom: 92px;
     width: var(--block-width);
     container-type: inline-size;
 }
@@ -50,7 +50,7 @@
 .header__title {
     text-transform: uppercase;
     max-width: 100%;
-    font-size: clamp(49px, 8.5cqw, 65px);
+    font-size: clamp(49px, 9.4cqw, 65px);
     text-align: center;
     white-space: nowrap;
 }
@@ -215,7 +215,8 @@
 }
 
 .card__like-button {
-    padding: 12.5px 37px;
+    padding: 12.5px 0;
+    width: 118px;
 }
 
 .save {
